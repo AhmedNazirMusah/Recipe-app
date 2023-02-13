@@ -10,11 +10,11 @@ RSpec.describe Recipe, type: :model do
   let(:recipe) do
     Recipe.create(
       user: user1,
-      name: "chicken stew",                                                
-      preparation_time: 10,                                              
+      name: 'chicken stew',
+      preparation_time: 10,
       cooking_time: 15,
-      description: "Very hot and spicy",
-      public: "dodo",
+      description: 'Very hot and spicy',
+      public: 'dodo'
     )
   end
 
@@ -29,7 +29,7 @@ RSpec.describe Recipe, type: :model do
   end
 
   it 'title between 3 and 250 should be valid' do
-    recipe.description = "Very hot and spicy"
+    recipe.description = 'Very hot and spicy'
     expect(recipe).to be_valid
   end
 
