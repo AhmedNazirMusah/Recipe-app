@@ -106,7 +106,6 @@ To run the project, execute the following command:
 ```sh
   cd Recipe-app
   rails c
-  To create users :
 
  irb(main):001:0> 
   
