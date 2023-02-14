@@ -1,0 +1,19 @@
+table td,
+table th {
+  padding: 8px;
+  border: 1px solid black;
+}
+
+table th {
+  padding: 13px 9px;
+  text-align: left;
+  background-color: #95a9a140;
+}
+
+table tr:nth-child(even) {
+  background-color: #c1a5a5;
+}
+
+table tr:hover {
+  background-color: #e8d4bdba;
+}
