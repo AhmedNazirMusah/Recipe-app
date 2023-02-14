@@ -1,0 +1,27 @@
+.foods {
+  position: relative;
+  flex-direction: column;
+  margin: 4rem auto;
+  background-color: rgb(167, 167, 167);
+}
+
+.t_row:nth-child(odd) {
+  background-color: grey;
+}
+
+th, td {
+  border: 1px solid;
+  padding: 15px;
+  text-align: left;
+}
+
+table {
+  border: 1px solid;
+  width: 100%;
+  margin-top: 6rem;
+}
+
+.add_food {
+  top: 8rem;
+  right: 1rem;
+}

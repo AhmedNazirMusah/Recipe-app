@@ -2,13 +2,23 @@
 
 <h1>Recipes</h1>
 
-<div id="recipes">
-  <% @recipes.each do |recipe| %>
-    <%= render recipe %>
+<div class="container">
+  <div class="recipes">
+    <% @recipes.each do |recipe| %>
     <p>
-      <%= link_to "Show this recipe", recipe %>
+      <strong>Name:</strong><%= recipe.name %>
     </p>
-  <% end %>
+
+    <p>
+      <strong>Description:</strong>
+      <%= recipe.description %>
+    </p>
+
+      <p>
+        <%= link_to "Show this recipe", recipe %>
+      </p>
+    <% end %>
+  </div>
 </div>
 
 <%= link_to "New recipe", new_recipe_path %>

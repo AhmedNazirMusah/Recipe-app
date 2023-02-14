@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+.pad {
+  padding: 1em;
+}
+
+.flex {
+  display: flex;
+}
+
+.max_width {
+  max-width: 40rem;
+}
+
+.fit {
+  position: absolute;
+}
+
+.border {
+  border: 1px solid;
+}
