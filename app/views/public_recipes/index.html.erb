@@ -2,7 +2,7 @@
 <p style="color: green"><%= notice %></p>
 
 <div class="container pad max_width">
-  <h1>Recipes</h1>
+  <h1>Public Recipes</h1>
   <div class="recipes pad flex border">
     <% @recipes.each do |recipe| %>
     <div class="recipe_card pad flex">
@@ -19,5 +19,4 @@
     </div>
     <% end %>
   </div>
-  <%= button_to "New recipe", new_recipe_path, class: "recipe_btn", method: "get" %>
 </div>
