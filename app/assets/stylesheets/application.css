@@ -17,7 +17,7 @@
 :root {
   --primary-color: #e8d4bdba;
   --secondary-color: #c1a5a5;
-  --tetiary-color:  #95a9a140;;
+  --tetiary-color: #95a9a140;
 }
 
 .pad {
@@ -38,7 +38,7 @@
 }
 
 .container {
-  background-color:var(--tetiary-color);
+  background-color: var(--tetiary-color);
   margin: auto;
   border-radius: 1rem;
 }
