@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+
+:root {
+  --primary-color: #e8d4bdba;
+  --secondary-color: #c1a5a5;
+  --tetiary-color: #95a9a140;
+}
+
+.pad {
+  padding: 1em;
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.max_width {
+  max-width: 40rem;
+}
+
+.fit {
+  position: absolute;
+}
+
+.container {
+  background-color: var(--tetiary-color);
+  margin: auto;
+  border-radius: 1rem;
+}
+
+.border {
+  border: 1px solid;
+  border-radius: 1rem;
+}
+
+button {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid;
+}

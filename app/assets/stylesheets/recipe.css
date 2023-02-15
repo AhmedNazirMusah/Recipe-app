@@ -1,0 +1,16 @@
+.recipes {
+  flex-direction: column;
+}
+
+.recipe_card {
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+}
+
+.recipe_card:hover {
+  background-color: var(--primary-color);
+}
+
+.recipe_btn {
+  margin-top: 1rem;
+}
