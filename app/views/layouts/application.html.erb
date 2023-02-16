@@ -28,6 +28,9 @@
         <li>
           <%= link_to "Public Recipes", public_recipes_path %>
         </li>
+        <li class="nav-item">
+        <%= link_to "General Shopping List", general_shopping_lists_path, class:"nav-link" %>
+      </li>
       </ul>
       <% if user_signed_in? %>
         <span ><%= link_to current_user.name, edit_user_registration_path %></span>
