@@ -1,15 +1,13 @@
 class GeneralShoppingListsController < ApplicationController
-    def index
-      @recipe_foods = RecipeFood.includes(:food, :recipe)
-      @missing_ingredient = @recipe_foods.select { |ingredient| ingredient.quantity > ingredient.food.quantity }
-      @missing_items = @missing_ingredient.map do |food_item|
-        {
-          name: food_item.food.name,
-          quantity: food_item.quantity - food_item.food.quantity,
-          price: food_item.food.price * (food_item.quantity - food_item.food.quantity)
-        }
-      end
-      @total_price = @missing_items.map { |item_prices| item_prices[:price] }.sum
+  def index
+    @user_recipes = current_user.recipes
+    @recipes_missing_foods = []
+    @missing_foods_total_price = 0
+    @missing_foods_count = 0
+    @user_recipes.each do |recipe|
+      @recipes_missing_foods.concat(recipe.missing_foods[:list])
+      @missing_foods_total_price += recipe.missing_foods[:total_price]
+      @missing_foods_count += recipe.missing_foods[:count]
     end
   end
-  
+end
