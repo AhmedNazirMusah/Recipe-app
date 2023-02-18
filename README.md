@@ -105,17 +105,10 @@ To run the project, execute the following command:
 
 ```sh
   cd Recipe-app
-  rails c
-
- irb(main):001:0> 
-  
- irb(main):001:0>
-  create post :
-  
-  start server :
-  
-  /Blog-App$ rails crails server
+  rails s
 ```
+Log Sign up
+Log in 
 
 ### Run tests
 
