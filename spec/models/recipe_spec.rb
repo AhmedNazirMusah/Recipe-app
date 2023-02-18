@@ -14,7 +14,8 @@ RSpec.describe Recipe, type: :model do
       preparation_time: 10,
       cooking_time: 15,
       description: 'Very hot and spicy',
-      public: 'dodo'
+      public: 'dodo',
+      user_id: 1
     )
   end
 
@@ -29,17 +30,17 @@ RSpec.describe Recipe, type: :model do
   end
 
   it 'title between 3 and 250 should be valid' do
-    recipe.description = 'Very hot and spicy'
-    expect(recipe).to be_valid
+    recipe.description = nil
+    expect(recipe).to_not be_valid
   end
 
   it 'Preparation time must be an integer' do
-    recipe.preparation_time = 10
-    expect(recipe).to be_valid
+    recipe.preparation_time = nil
+    expect(recipe).to_not be_valid
   end
 
   it 'Working time must be an integer' do
-    recipe.cooking_time = 15
-    expect(recipe).to be_valid
+    recipe.cooking_time = nil
+    expect(recipe).to_not be_valid
   end
 end
