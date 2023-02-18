@@ -11,10 +11,7 @@ class Ability
 
     can(:manage, Food, user:)
     can(:manage, Recipe, user:)
-    can :manage, RecipeFood do |food|
-      food.recipe.user == user
-    end
-
+    can(:manage, RecipeFood, user:) 
     can :read, :all
 
     # The first argument to `can` is the action you are giving the user
