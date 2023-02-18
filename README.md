@@ -107,17 +107,13 @@ To run the project, execute the following command:
   cd Recipe-app
   rails s
 ```
-Log Sign up
+Sign up <br/>
+
 Log in 
 
-### Run tests
-
-To run tests, run the following command:
+Create food and Recipe
 
 
-```sh
-rspec
-```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
