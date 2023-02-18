@@ -38,6 +38,7 @@
 }
 
 .container {
+  position: relative;
   background-color: var(--tetiary-color);
   margin: auto;
   border-radius: 1rem;
@@ -46,6 +47,10 @@
 .border {
   border: 1px solid;
   border-radius: 1rem;
+}
+
+table {
+  width: 100%;
 }
 
 button {
