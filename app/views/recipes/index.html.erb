@@ -3,12 +3,14 @@
 
 <div class="container pad max_width">
   <h1>Recipes</h1>
-  <div class="recipes pad flex border">
+  <div class="recipes flex gap">
     <% @recipes.each do |recipe| %>
-    <div class="recipe_card pad flex">
-      <div>
+    <div class="recipe_card pad gap flex">
+      <div class="recipe flex">
         <p><%= link_to recipe.name, recipe %></p>
-        <p>remove</p>
+        <% if can? :destroy, recipe %>
+          <p> <%= button_to 'Remove', recipe_path(recipe.id), html: {'data-turbo' => "false"}, :method => :delete %></p>
+        <% end %>
       </div>
 
       <div>
