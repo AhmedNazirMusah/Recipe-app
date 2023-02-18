@@ -13,6 +13,11 @@
         <td><%= food.measurement_unit%></td>
         <td>$<%= food.price%></td>
         <td><%= food.quantity%></td>
+        <% if can? :destroy, food %>
+        <td><%= button_to 'Delete', food_path(food), method: :delete, class:"btn btn-outline-danger"%></td>
+        <% else %>
+        <td class="text-danger">Cannot Delete</td>
+        <% end %>
       </tr>
     <% end %>
   </table>

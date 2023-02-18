@@ -11,14 +11,11 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary p-3 bg-dark" data-bs-theme="dark">
-      <div class="container-fluid">
-      <%= link_to "RecipeBlog", root_path, class:"navbar-brand"%>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <nav class="navbar">
+      <div >
+      <%= link_to "RecipeBlog", root_path %>
+      <div>
+      <ul class="navbar-nav">
         <li class="nav-item">
           <%= link_to "Home", root_path, aria_current:"page" %>
         </li>
@@ -28,12 +25,16 @@
         <li>
           <%= link_to "Public Recipes", public_recipes_path %>
         </li>
+        <li class="nav-item">
+        <%= link_to "General Shopping List", general_shopping_lists_path, class:"nav-link" %>
+      </li>
       </ul>
       <% if user_signed_in? %>
-        <span ><%= link_to current_user.name, edit_user_registration_path %></span>
-        <span>
-          <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
-        <% end %>
+      <%= current_user.name %><br/>
+      <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: 'delete' },  class: "btn btn-danger btn-lg"%>
+      <%else%>
+      <%= link_to "Sign up!", new_user_registration_path,  class: "btn btn-success btn-lg"%> <%= link_to "Sign in",user_session_path,  class: "btn btn-primary btn-lg"%>
+      <%end%>
         </span>
       </div>
     </div>
