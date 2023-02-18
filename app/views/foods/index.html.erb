@@ -1,0 +1,28 @@
+<%= stylesheet_link_tag "application", "usertable" %>
+
+<div class="container pad max_width">
+  <h1>Food</h1>
+  <%= button_to 'Add Food', new_food_path, class: "add-food fit", method: :get %>
+  <table>
+    <tr>
+      <th>Foods</th>
+      <th>Measurement unit</th>
+      <th>Unit price</th>
+      <th>Quantity</th>
+      <th>Actions</th>
+    </tr>
+    <% @foods.each do |food| %>
+      <tr>
+        <td><%= food.name%></td>
+        <td><%= food.measurement_unit%></td>
+        <td>$<%= food.price%></td>
+        <td><%= food.quantity%></td>
+        <% if can? :destroy, food %>
+        <td><%= button_to 'Delete', food_path(food), method: :delete %></td>
+        <% else %>
+        <td class="text-danger">Cannot Delete</td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+</div>

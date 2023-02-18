@@ -1,0 +1,40 @@
+.recipes {
+  flex-direction: column;
+}
+
+.recipe {
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.recipe_card {
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  justify-content: space-between;
+}
+
+.recipe_card:hover {
+  background-color: var(--primary-color);
+}
+
+.recipe_btn {
+  margin-top: 1rem;
+}
+
+.public {
+  top: 10rem;
+  right: 1rem;
+}
+
+.btn-grp {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.btn-margin {
+  margin: 1rem 0;
+}
+
+.holder {
+  flex-direction: column;
+}

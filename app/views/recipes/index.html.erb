@@ -1,0 +1,25 @@
+<%= stylesheet_link_tag "application", "recipe" %>
+<p style="color: green"><%= notice %></p>
+
+<div class="container pad max_width">
+  <h1>Recipes</h1>
+  <div class="recipes flex gap">
+    <% @recipes.each do |recipe| %>
+    <div class="recipe_card pad gap flex">
+      <div class="recipe flex">
+        <p><%= link_to recipe.name, recipe %></p>
+        <% if can? :destroy, recipe %>
+          <p> <%= button_to 'Remove', recipe_path(recipe.id), html: {'data-turbo' => "false"}, :method => :delete %></p>
+        <% end %>
+      </div>
+
+      <div>
+        <p>
+          <%= recipe.description %>
+        </p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <%= button_to "New recipe", new_recipe_path, class: "recipe_btn", method: "get" %>
+</div>

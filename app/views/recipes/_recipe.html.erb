@@ -1,0 +1,41 @@
+<div class="status">
+      <h2><%= @recipes.name %></h2>
+    <div class="holder">
+      <p>Preparation time: <%= @recipes.preparation_time %> </p>
+      <p>Cooking time: <%=@recipes.cooking_time %></p>
+    </div>
+    <p class="recipe_steps"><%= @recipes.description%></p>
+
+    <%if can? :manage, @recipes %>
+      <div class="recipe__actions">
+        <%= link_to 'Generate shopping list', general_shopping_lists_path, class:"btn btn-outline-success" %>
+        <%= link_to 'Add ingredient',  new_recipe_recipe_food_path(@recipes.id), class:"btn btn-outline-success" %>
+      </div>
+      <hr>
+      <% end %>
+
+    <table>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+        <th>Actions</th>
+      </tr>
+      <% @recipes.recipe_foods.each do |r_food| %>
+        <tr>
+          <% if can? :destroy, @recipes %>
+          <td> <%= r_food.food.name %> </td>
+          <td> <%= r_food.quantity %></td>
+          <td> $<%= r_food.food.price%> </td>
+          <td class="action">
+          <span class="modify_btn">
+          <%= button_to 'Modify'%>
+          </span>
+          <%= button_to ' Remove', recipe_recipe_food_path(@recipes.id, r_food.id), method: :delete, class:"btn btn-outline-danger" %>
+          </td>
+          <% end %>
+        </tr>
+        <% end %>
+    </table>
+  </div>
+</div>

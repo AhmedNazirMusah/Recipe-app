@@ -1,0 +1,139 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+:root {
+  --primary-color: #e8d4bdba;
+  --secondary-color: #c1a5a5;
+  --tetiary-color: #95a9a140;
+}
+
+/* css resets */
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* utility classes */
+.t-align {
+  text-align: center;
+}
+
+.gap {
+  gap: 1em;
+}
+
+.pad {
+  padding: 1em;
+}
+
+.flex {
+  display: flex;
+}
+
+.fit {
+  position: absolute;
+}
+
+/* body */
+body {
+  height: 100%;
+  background-color: var(--primary-color);
+}
+
+/* navbar  */
+.navbar {
+  position: fixed;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--secondary-color);
+}
+
+.navbar-content {
+  justify-content: space-between;
+  width: 100%;
+  gap: 1em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1em;
+}
+
+/* general body */
+.container {
+  position: relative;
+  background-color: var(--tetiary-color);
+  margin: 7rem auto;
+  border-radius: 1rem;
+  max-width: 40rem;
+}
+
+h1 {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.border {
+  border: 1px solid;
+  border-radius: 1rem;
+}
+
+table {
+  width: 100%;
+}
+
+button,
+.btn {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--secondary-color);
+  filter: drop-shadow(1px 1px 1px);
+}
+
+.btn-success,
+button:hover {
+  filter: drop-shadow(2px 2px 2px);
+  background-color: var(--primary-color);
+}
+
+.header-desc {
+  margin-bottom: 1rem;
+}
+
+form {
+  padding: 1rem;
+}
+
+input {
+  width: 100%;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.form_control {
+  margin: 0.5rem;
+}

@@ -1,0 +1,43 @@
+<%= stylesheet_link_tag "application", "recipe" %>
+<p style="color: green"><%= notice %></p>
+
+<div class="container pad max_width">
+    <h1 class="recipe_header"><%= @recipes.name %></h1>
+    <div class="holder flex gap">
+      <p>Preparation time: <%= @recipes.preparation_time %> </p>
+      <p>Cooking time: <%=@recipes.cooking_time %></p>
+      <p class="recipe_steps"><%= @recipes.description%></p>
+      <p class="public fit">Public:<%= @recipes.public %></p>
+    </div>
+
+    <%if can? :manage, @recipes %>
+      <div class="flex btn-grp btn-margin">
+        <%= button_to 'Generate shopping list', general_shopping_lists_path, class:"btn btn-outline-success", method: :get %>
+        <%= button_to 'Add ingredient',  new_recipe_recipe_food_path(@recipes.id), class:"btn btn-outline-success", method: :get %>
+      </div>
+      <hr>
+      <% end %>
+
+    <table>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+        <th>Actions</th>
+      </tr>
+      <% @recipes.recipe_foods.each do |r_food| %>
+        <tr>
+          <% if can? :destroy, @recipes %>
+          <td> <%= r_food.food.name %> </td>
+          <td> <%= r_food.quantity %></td>
+          <td> $<%= r_food.food.price%> </td>
+          <td class="btn-grp flex">
+          <%= button_to ' Remove', recipe_recipe_food_path(@recipes.id, r_food.id), method: :delete, class:"btn btn-outline-danger" %>
+          <%= button_to "Edit this recipe",  edit_recipe_recipe_food_path(r_food.id, r_food.recipe.id), html: {'data-turbo' => "false"}, :method => :get %>
+          </td>
+          <% end %>
+        </tr>
+        <% end %>
+    </table>
+  </div>
+</div>
