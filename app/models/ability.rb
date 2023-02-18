@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -11,7 +9,7 @@ class Ability
 
     can(:manage, Food, user:)
     can(:manage, Recipe, user:)
-    can(:manage, RecipeFood, user:) 
+    can(:manage, RecipeFood, user:)
     can :read, :all
 
     # The first argument to `can` is the action you are giving the user

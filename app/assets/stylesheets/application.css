@@ -53,3 +53,8 @@ button {
   border-radius: 5px;
   border: 1px solid;
 }
+
+.navbar-nav {
+  display: flex;
+  justify-content: space-evenly;
+}
