@@ -3,9 +3,9 @@
 
 <div class="container pad max_width">
   <h1>Public Recipes</h1>
-  <div class="recipes pad flex border">
+  <div class="recipes gap flex">
     <% @recipes.each do |recipe| %>
-    <div class="recipe_card pad flex">
+    <div class="recipe_card gap pad flex">
       <div>
         <p><%= link_to recipe.name, recipe %></p>
         <p>by <%= recipe.user.name %></p>

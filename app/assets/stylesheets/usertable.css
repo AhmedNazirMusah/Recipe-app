@@ -17,3 +17,8 @@ table tr:nth-child(even) {
 table tr:hover {
   background-color: #e8d4bdba;
 }
+
+.add-food {
+  top: 6rem;
+  right: 1rem;
+}
